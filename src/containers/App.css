@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+nav>a {
+  color: #ffffff;
+  margin: 10px;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+nav>a:hover, nav>a.active {
+  color: #ec407a;
+}
+
+.flex-container {
+  display: flex;
+}
+
+main {
+  background-image: url('../assets/images/1.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+#bg-drop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+#bg-drop:not(.full-page) {
+  overflow-y: scroll;
+}
+
+#bg-drop>div {
+  margin: auto;
+}
+
+main#products {
+  background-image: url('../assets/images/3.jpg');
+}
+
+main#about {
+  background-image: url('../assets/images/2.jpg');
+}
+
+#products-list {
+  flex-direction: column;
+}
+
+#products-list>div {
+  background-color: rgba(0, 0, 0, 0.35);
+  margin: 0 0 10px 0;
+  padding: 0 15px;
+  width: 20rem;
+}
+
+h1, h2 {
+  font-weight: 200;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nezuco {
+  font-size: 3rem;
+  letter-spacing: 0.6em;
+}
+
+#subtitle {
+  font-style: italic;
+}
+
+@media (min-width: 800px) {
+  h1 {
+      font-size: 4rem;
+  }
+  h2 {
+      font-size: 2rem;
+  }
+  #nezuco {
+      font-size: 6rem;
+  }
+  #products-list>div {
+      width: 40rem;
+  }
+}
