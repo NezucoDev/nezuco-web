@@ -3,10 +3,6 @@
     color: #121212;
 }
 
-a {
-    color: hotpink;
-}
-
 input {
     padding: 10px 10px 10px 5px;
     border: none;
@@ -26,7 +22,7 @@ input:invalid {
     display: flex;
 }
 
-.flex-dir-column {
+.flex-column {
     flex-direction: column;
 }
 

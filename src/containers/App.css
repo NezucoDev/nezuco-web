@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   color: #ffffff;
+  background-color: #000000;
   font-family: 'Lato', sans-serif;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  margin: 10px auto;
+  padding: 10px 0;
+  transition: 0.5s;
+}
+
+nav.floating {
+  background-color: var(--dark-a);
+  padding: 0;
 }
 
 nav>a {
@@ -20,56 +31,74 @@ nav>a {
 }
 
 nav>a:hover, nav>a.active {
-  color: #ec407a;
+  color: var(--primary-color);
 }
 
-.flex-container {
+.d-flex {
   display: flex;
 }
 
-main {
-  background-image: url('../assets/images/1.jpg');
-  background-size: cover;
+section.d-flex {
+  flex-direction: column;
+}
+
+section.d-flex.banner {
+  align-items: center;
+}
+
+.banner>.banner-image {
+  width: 75%;
+}
+
+.banner>.banner-content {
+  text-align: center;
+  padding: 2em;
+}
+
+.banner-content .banner-links {
+  flex-direction: column;
+}
+
+.full-page {
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
+  background-size: cover;
 }
 
-#bg-drop {
-  display: flex;
+.min-full-page {
   flex-direction: column;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  min-height: 100vh;
+  background-size: cover;
 }
 
-#bg-drop:not(.full-page) {
-  overflow-y: scroll;
+.mt-1 {
+  margin-top: 1rem;
 }
 
-#bg-drop>div {
-  margin: auto;
+.mt-2 {
+  margin-top: 2rem;
 }
 
-main#products {
-  background-image: url('../assets/images/3.jpg');
+.lmr-5>* {
+  margin-right: 1em;
 }
 
-main#about {
-  background-image: url('../assets/images/2.jpg');
+.lmt-5>* {
+  margin-top: 1em;
 }
 
-#products-list {
-  flex-direction: column;
-}
-
-#products-list>div {
-  background-color: rgba(0, 0, 0, 0.35);
-  margin: 0 0 10px 0;
-  padding: 0 15px;
-  width: 20rem;
+.alert-modal {
+  background-color: var(--white);
+  color: var(--dark);
+  padding: 2em;
+  width: 60%;
+  text-align: center;
 }
 
 h1, h2 {
   font-weight: 200;
-  text-align: center;
 }
 
 h1 {
@@ -80,30 +109,44 @@ h2 {
   font-size: 1.75rem;
 }
 
+p {
+  line-height: 1.5;
+}
+
 a {
   text-decoration: none;
 }
 
-#nezuco {
-  font-size: 3rem;
-  letter-spacing: 0.6em;
-}
-
-#subtitle {
-  font-style: italic;
+li {
+  margin-top: 10px;
 }
 
 @media (min-width: 800px) {
   h1 {
-      font-size: 4rem;
+    font-size: 4em;
   }
   h2 {
-      font-size: 2rem;
+    font-size: 2.25em;
   }
-  #nezuco {
-      font-size: 6rem;
+  section.d-flex.banner {
+    flex-direction: row;
   }
-  #products-list>div {
-      width: 40rem;
+  .banner>.banner-image {
+    width: 50%;
+  }
+  .banner>.banner-content {
+    width: 50%;
+    text-align: inherit;
+    padding: 4em;
+  }
+  .banner.banner-alt>.banner-image {
+    order: 1;
+  }
+  .banner.banner.banner-alt>.banner-content {
+    order: 0;
+  }
+
+  .alert-modal {
+    width: 25%;
   }
 }

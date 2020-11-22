@@ -25,19 +25,19 @@ const Login = ({ location }) => {
     }
 
     return (
-        <div id='auth-container' className='d-flex flex-dir-column' style={{ minHeight: '100vh', alignItems: 'center', backgroundColor: '#e2e2e2' }}>
-            <div>
-                <h1 className='center title'>Nezuco</h1>
-                <h3 className='center'>Login With Your Nezuco Account</h3>
+        <div id='auth-container' className='d-flex flex-column' style={{ minHeight: '100vh', alignItems: 'center', backgroundColor: '#e2e2e2' }}>
+            <div className='center'>
+                <h1 className='title mt-2'>Nezuco</h1>
+                <h3 className='mt-2'>Login With Your Nezuco Account</h3>
             </div>
-            <div style={{ height: '70%', width: '30%' }}>
+            <div style={{ height: '70%', width: '30%' }} className='mt-2'>
                 <div className={`card ${awaitingResponse ? 'disabled' : ''}`}>
                     <LoginForm setAwaitingResponse={setAwaitingResponse} />
 
                     <p>Don't have an account? <Link to={`/register${next ? `?next=${next}` : ''}`}>Register now</Link>.</p>
                 </div>
             </div>
-            <footer>
+            <footer className='mt-2'>
                 <p>&copy; Copyright 2020, Nezuco Inc. All rights reserved.</p>
             </footer>
         </div>

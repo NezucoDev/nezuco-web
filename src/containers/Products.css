@@ -1,0 +1,9 @@
+#products-list {
+    flex-direction: column;
+}
+
+#products-list>div {
+    background-color: rgba(0, 0, 0, 0.35);
+    margin: 0 0 10px 0;
+    padding: 0 15px;
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "WinBack USB",
+        "description": "An all-in-one, modern storage solution for your backup needs. Create backups and restore from multiple checkpoints at lightning speeds. It can also clone drives and supports virtualization. Visit the official WinBack site to learn more and order it.",
+        "image": "images/winback-desktop.webp",
+        "image_alt": "",
+        "link": "https://winbackusb.com"
+    },
+    {
+        "name": "MKS Bazar",
+        "description": "Whether it's trendy t-shirts, jewellry, cosmetics or electronic gadgets you are looking for, MKS Bazar is the right place for you.",
+        "image": "images/mks-desktop.webp",
+        "image_alt": "",
+        "link": "https://mksbazar.com"
+    },
+    {
+        "name": "DoorMart",
+        "description": "DoorMart is your one stop shop for all your daily needs, delivered right at your doorstep, be it groceries, fresh dairy product or services like plumbing, carpentar, electrician, DoorMart provides the best of them.",
+        "image": "images/doormart-desktop.webp",
+        "image_alt": "",
+        "link": "https://doormart.com.pk"
+    },
+    {
+        "name": "Dairy Deals",
+        "description": "Dairy Deals manufactures tools and machinery for dairy farms. You can learn more about them on their website, and order the products you like.",
+        "image": "images/dairy-deals-desktop.webp",
+        "image_alt": "",
+        "link": "https://dairy-deals.com"
+    }
+]
