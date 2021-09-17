@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div style={{color:'black'}}>
+            <div style={{color:'white'}}>
                 <h2>Welcome, {user.firstName} {user.lastName}!</h2>
                 <Link to='/logout'><h3 className='center'>Logout</h3></Link>
                 <h1>Dashboard</h1>

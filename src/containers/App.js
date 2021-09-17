@@ -25,7 +25,7 @@ function App() {
             <Route path='/about' component={About}  />
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route path='/dashboard' component={Dashboard} />
+            <ProtectedRoute path='/dashboard' component={Dashboard} />
             <ProtectedRoute path='/logout' exact component={Logout} />
         </BrowserRouter>
     )

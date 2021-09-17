@@ -54,11 +54,11 @@ class RegisterForm extends Form {
                 {this.renderInput('email', 'Email')}
                 {this.renderInput('password', 'Password', 'password')}
 
-                <p>By creating an account, you agree to our <Link to='#'>Terms & Conditions</Link> and <Link
-                    to='#'>Privacy Policy</Link>.</p>
+                <p>By creating an account, you agree to our <Link to='/terms-and-conditions'>Terms & Conditions</Link> and <Link
+                    to='/privacy-policy'>Privacy Policy</Link>.</p>
 
-                <div className='form-group mt-15'>
-                    <button type='submit'>Register</button>
+                <div className='form-group mt-15 align-items-center'>
+                    <button type='submit' className='btn' style={{width: '40%'}}>Register</button>
                 </div>
             </form>
         )

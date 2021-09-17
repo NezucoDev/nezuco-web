@@ -1,40 +1,48 @@
-import jwtDecode from 'jwt-decode'
 import http from './httpService'
 
 const apiEndpoint = '/login'
 
 http.setJwt(getJwt())
 
+let user = null
+
 async function login(email, password) {
-    const { headers } = await http.post(apiEndpoint, { email, password })
+    const { data } = await http.post(apiEndpoint, new URLSearchParams({
+        username: email,
+        password,
+        client_id: '60cf4334a12c6b52c6d79620',
+        client_secret: 'nezucochan',
+        grant_type: 'password'
+    }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
 
-    const authHeader = headers['authorization']
-    if (!authHeader)
-        throw new Error('No authorization header present')
-
-    const jwt = authHeader.split(' ')[1]
-    localStorage.setItem('jwt', jwt)
+    localStorage.setItem('accessToken', data.access_token)
+    localStorage.setItem('refreshToken', data.refresh_token)
 }
 
-function loginWithJwt(jwt) {
-    localStorage.setItem('jwt', jwt)
+function loginWithJwt(accessToken) {
+    localStorage.setItem('accessToken', accessToken)
 }
 
 function logout() {
-    localStorage.removeItem('jwt')
+    localStorage.removeItem('accessToken')
 }
 
 function getCurrentUser() {
-    try {
-        const token = localStorage.getItem('jwt')
-        return jwtDecode(token)
-    } catch (ex) {
-        return null
+    if (user) {
+        return user
+    } else {
+        try {
+            const token = localStorage.getItem('accessToken')
+            return token
+        } catch (ex) {
+            console.error(ex)
+            return null
+        }
     }
 }
 
 function getJwt() {
-    return localStorage.getItem('jwt')
+    return localStorage.getItem('accessToken')
 }
 
 export default {

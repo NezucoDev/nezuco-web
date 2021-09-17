@@ -20,6 +20,7 @@ class LoginForm extends Form {
     }
 
     submitForm = async () => {
+        console.log('hey')
         this.props.setAwaitingResponse(true)
 
         try {
@@ -33,6 +34,7 @@ class LoginForm extends Form {
                 })
                 this.setState({ formErrors: errors })
             }
+            console.error(e)
         }
         this.props.setAwaitingResponse(false)
     }
@@ -43,8 +45,8 @@ class LoginForm extends Form {
                 {this.renderInput('email', 'Email')}
                 {this.renderInput('password', 'Password', 'password')}
 
-                <div className='form-group'>
-                    <button type='submit'>Login</button>
+                <div className='form-group align-items-center'>
+                    <button type='submit' className='btn' style={{width: '40%'}}>Login</button>
                 </div>
             </form>
         )
